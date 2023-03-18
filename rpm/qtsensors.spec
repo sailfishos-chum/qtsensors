@@ -66,6 +66,10 @@ for prl_file in libQt5*.prl ; do
 done
 popd
 
+#Move system config file
+mkdir -p %{buildroot}/opt/qt5/etc/xdg/QtProject/
+mv %{buildroot}/etc/xdg/QtProject/Sensors.conf %{buildroot}/opt/qt5/etc/xdg/QtProject/Sensors.conf
+
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
@@ -77,6 +81,7 @@ popd
 %{_opt_qt5_archdatadir}/qml/QtSensors/
 %dir %{_opt_qt5_libdir}/cmake/Qt5Sensors/
 %{_opt_qt5_libdir}/cmake/Qt5Sensors/Qt5Sensors_*Plugin.cmake
+%{_opt_qt5_prefix}/etc/xdg/QtProject/Sensors.conf
 
 %files devel
 %{_opt_qt5_headerdir}/QtSensors/
