@@ -42,7 +42,7 @@ Requires: opt-qt5-qtbase-devel%{?_isa}
 export QTDIR=%{_opt_qt5_prefix}
 touch .git
 
-%{opt_qmake_qt5}
+%{opt_qmake_qt5} CONFIG+=sensorfw
 
 # have to restart build several times due to bug in sb2
 %make_build  -k || chmod -R ugo+r . || true
