@@ -1,7 +1,7 @@
 %global qt_version 5.15.8
 
 Summary: Qt5 - Sensors component
-Name:    opt-qt5-qrsensors
+Name:    opt-qt5-qtsensors
 Version: 5.15.8
 Release: 3%{?dist}
 
