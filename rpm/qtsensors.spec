@@ -8,11 +8,11 @@ Release: 3%{?dist}
 # See LGPL_EXCEPTIONS.txt, LICENSE.GPL3, respectively, for exception details
 License: LGPL-3.0-only OR GPL-3.0-only WITH Qt-GPL-exception-1.0
 Url:     http://www.qt.io/
-%global majmin %(echo %{version} | cut -d. -f1-2)
 Source0: %{name}-%{version}.tar.bz2
 
 # filter qml/plugin provides
 %global __provides_exclude_from ^(%{_opt_qt5_archdatadir}/qml/.*\\.so|%{_opt_qt5_plugindir}/.*\\.so)$
+%{?opt_qt5_default_filter}
 
 BuildRequires: make
 BuildRequires: opt-qt5-qtbase-devel >= %{qt_version}
@@ -21,6 +21,7 @@ BuildRequires: sensorfw-qt5-devel
 
 %{?_qt5:Requires: %{_qt5}%{?_isa} = %{_qt5_version}}
 BuildRequires: opt-qt5-qtdeclarative-devel
+Requires: opt-qt5-qtdeclarative >= %{qt_version}
 
 %description
 The Qt Sensors API provides access to sensor hardware via QML and C++
