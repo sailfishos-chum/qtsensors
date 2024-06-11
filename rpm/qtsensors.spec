@@ -1,8 +1,8 @@
-%global qt_version 5.15.10
+%global qt_version 5.15.14
 
 Summary: Qt5 - Sensors component
 Name:    opt-qt5-qtsensors
-Version: 5.15.10
+Version: 5.15.14
 Release: 3%{?dist}
 
 # See LGPL_EXCEPTIONS.txt, LICENSE.GPL3, respectively, for exception details
